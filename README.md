@@ -76,6 +76,8 @@ you can also use 50-50 lifeline
 
 ### 🎯 score Quiz Interface
 After 10 questions, click on Submit to view your Score!
+
+
 <img width="558" alt="score" src="https://github.com/user-attachments/assets/ec418151-b0da-4aed-9e56-a38c69b7b6af" />
 
 
