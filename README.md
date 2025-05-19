@@ -1,91 +1,84 @@
-1. Login Screen
-The application starts with a Login window, where I used Java Swing components like JFrame, JLabel, JTextField, and JButton. The user is asked to enter their name in a text field. When the "Next" button is clicked, an ActionListener captures the event, retrieves the user’s name from the text field, and moves to the next screen. This interaction is handled through event-driven programming.
+# Quiz Application - Java Swing
 
-How it works:
+## 📝 Project Overview
+## 🚀 Features
+## 📷 Screenshots (if any)
+## 🛠️ Technologies Used
+## 📂 Project Structure
+## 📖 How It Works
+## 📦 Setup & Installation
+## 🙌 Acknowledgements
 
-A JFrame is created for the login screen.
+## 📝 Project Overview
+This is a Java Swing-based quiz application with 10 multiple-choice questions. It features a login screen, rules page, quiz timer, 50-50 lifeline, and score display.
 
-A JTextField accepts user input.
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![Swing](https://img.shields.io/badge/Swing-GUI-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-Clicking the button triggers an ActionEvent, and the program stores the name and proceeds to the Rules screen.
 
-2. Rules Screen
-After logging in, the user is taken to a new screen displaying the quiz rules. I used a JTextArea or JLabel to display the rules, and two buttons: "Start" to begin the quiz and "Back" to return to the login screen.
+## 🚀 Features
 
-How it works:
+| Feature              | Description                                      |
+|----------------------|--------------------------------------------------|
+| 👤 Login Screen       | Collects user name before quiz begins            |
+| 📜 Rules Page        | Displays quiz instructions                       |
+| ❓ Quiz Interface     | 10 MCQs with radio button options                |
+| 🕒 Timer              | 15 seconds per question                          |
+| 🧠 50-50 Lifeline     | Removes 2 incorrect options for one question     |
+| 📊 Result Page        | Displays final score                             |
 
-This screen is another JFrame with multiple components laid out using layout managers (like BorderLayout or null for custom positioning).
 
-Clicking "Start" opens the quiz screen.
+## 📖 How It Works
 
-Clicking "Back" disposes the current frame and reopens the login screen.
+### 1️⃣ Login Page
+- A JFrame collects the user's name via JTextField.
+- Clicking "Next" takes the user to the rules screen.
 
-3. Quiz Screen
-This is the main part of the application. The quiz has 10 questions (randomly selected from a pool of 50, if you've added that feature), each with four options. I used JRadioButton components grouped with a ButtonGroup to ensure only one answer is selected at a time. The questions and options are displayed using JLabel and JRadioButton.
+### 2️⃣ Rules Page
+- Shows quiz rules using JLabel.
+- Buttons: "Start" to begin the quiz or "Back" to return.
 
-How it works:
+### 3️⃣ Quiz Interface
+- Displays one question at a time with 4 radio button options.
+- User selects an option and clicks "Next".
+- Last question changes button to "Submit".
 
-Each question is displayed on a JLabel.
+### 4️⃣ Timer
+- Each question has a 15-second countdown.
+- Automatically skips question if time runs out.
 
-Four JRadioButtons display the answer options.
+### 5️⃣ Lifeline
+- A 50-50 button disables two incorrect options.
+- Can be used only once per quiz.
 
-A ButtonGroup groups them so only one can be selected at a time.
+### 6️⃣ Result
+- Displays score at the end using JFrame.
 
-A "Next" button shows the next question.
 
-An array stores the selected answer, and the index moves forward on each "Next" click.
 
-A "Submit" button appears on the last question to finish the quiz.
 
-4. Timer Functionality
-Each question is given a 15-second timer. I implemented this using Java’s Timer class or by overriding the paint() method and using a countdown with Thread.sleep() and repaint().
+## 📷 Screenshots
 
-How it works:
+### 🖥️ Login Screen
+<img width="898" alt="loginpagequiz" src="https://github.com/user-attachments/assets/1f2d4f0e-bc70-4b2b-831b-30449111267b" />
 
-A timer runs on a separate thread.
 
-It updates a countdown on the screen.
+### 🖥️ Rules Screen
+<img width="593" alt="rulesquiz" src="https://github.com/user-attachments/assets/21000cb9-27b7-4b06-a078-e0a073b55f69" />
 
-If time runs out before the user answers, the application automatically moves to the next question and saves the answer as blank.
+### ❓ Quiz Interface
+<img width="960" alt="questionstarts" src="https://github.com/user-attachments/assets/3092503b-cb26-4108-ab6a-320593349ab2" />
 
-5. 50-50 Lifeline
-I included a lifeline feature where the user can eliminate two wrong answers for a question. I added a "Lifeline" button which, when clicked, disables two incorrect JRadioButton options.
+### ⚖️ 50-50 Quiz Interface
+you can also use 50-50 lifeline
+<img width="960" alt="50-50lifeline" src="https://github.com/user-attachments/assets/7177076c-0f35-4cad-8184-290b56ac4e60" />
 
-How it works:
+### 🎯 score Quiz Interface
+After 10 questions, click on Submit to view your Score!
+<img width="558" alt="score" src="https://github.com/user-attachments/assets/ec418151-b0da-4aed-9e56-a38c69b7b6af" />
 
-I hardcoded which two options to disable for specific questions.
 
-On click, the button disables two incorrect radio buttons using .setEnabled(false).
 
-The lifeline can only be used once, tracked using a boolean flag.
 
-6. Answer Storage & Evaluation
-As the user navigates through the quiz, their selected answers are stored in an array. Another array holds the correct answers for each question.
 
-How it works:
-
-On each "Next" or "Submit" click, the selected radio button’s value is stored.
-
-After submission, a loop compares user answers with correct answers and calculates the total score.
-
-7. Result Screen
-Once the quiz ends, the application shows the final score in a new window using JLabel.
-
-How it works:
-
-A new JFrame displays the total score.
-
-It fetches the user’s name and score and shows a thank-you message.
-
-Summary of Concepts Used:
-Swing components: JFrame, JLabel, JTextField, JRadioButton, ButtonGroup, JButton
-
-Event Handling: ActionListener
-
-Layout Managers: for arranging components
-
-Multithreading or Timers: for the countdown feature
-
-Arrays/Lists: for storing questions, options, and answers
-
-Conditional Logic: for evaluating answers and managing the lifeline
